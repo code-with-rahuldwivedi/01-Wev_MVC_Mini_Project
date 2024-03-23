@@ -1,1 +1,1 @@
-# 01-Wev_MVC_Mini_Project
+# 01-WevMVC_Mini_Project
