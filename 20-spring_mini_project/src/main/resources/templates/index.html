@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+  	<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .container {
+      max-width: 300px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .error-message {
+      color: red;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-form .form-group {
+      margin-bottom: 20px;
+    }
+
+    .login-form label {
+      display: block;
+      font-weight: bold;
+    }
+
+    .login-form input[type="text"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ced4da;
+      border-radius: 4px;
+    }
+
+    .login-form button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .login-form button:hover {
+      background-color: #0056b3;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+  <body>
+    <div class="container">
+   		<h2><u>Login Here</u></h2>
+   		<font color="red">
+			   <p th:text="${emsg}"></p>
+		</font>
+   		
+    	<form th:object="${user}" th:action="@{/login}" method="post">
+        	<table>
+				<tr>
+					<td>Email :</td>
+					<td> <input type="text" th:field="*{email}" /></td>
+				</tr>
+				<tr>
+					<td>Password :</td>
+					<td> <input type="password" th:field="*{pwd}" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td> <input type="submit" value="Login" /></td>
+				</tr>
+			</table>
+    	</form>
+    	<a href="register"><u>Registration Here</u></a>
+    </div>
+  </body>
+</html>
